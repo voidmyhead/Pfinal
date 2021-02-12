@@ -1,0 +1,23 @@
+﻿<Window x:Class="Pfinal.Chart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chartCtrl="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        Title="Chart" Height="600" Width="800">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+
+                  VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <chartCtrl:Chart x:Name="xColumnChart" Title="성적차트" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="520">
+                <chartCtrl:ColumnSeries x:Name ="rchart" Title="학생명" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" />
+            </chartCtrl:Chart>
+        </Grid>
+    </ScrollViewer>
+</Window>

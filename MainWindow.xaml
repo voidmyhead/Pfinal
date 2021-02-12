@@ -1,0 +1,46 @@
+﻿<Window x:Class="Pfinal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pfinal"
+        mc:Ignorable="d"
+        Title="학생성적관리프로그램" Height="276" Width="336">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="학생성적관리프로그램" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" FontSize="20"/>
+        <Label Content="이름" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" FontSize="15"/>
+        <Label Content="영어" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" FontSize="15"/>
+        <Label Content="수학" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" FontSize="15"/>
+        <Label Content="평균" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" FontSize="15"/>
+        <Label x:Name="Lb_SumScore" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" FontSize="15"/>
+        <Label Content="총점" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3" FontSize="15"/>
+        <Label x:Name="Lb_AverageScore" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="3" FontSize="15"/>
+        <Button x:Name="Score_Insert" Content="성적입력" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4" FontSize="15" Click="Score_Insert_Click"/>
+        <Button x:Name="Score_Print" Content="성적출력" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" FontSize="15" Click="Score_Print_Click"/>
+        <Button x:Name="Score_Delete" Content="성적삭제" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4" FontSize="15" Click="Score_Delete_Click"/>
+        <Button x:Name="Score_Change" Content="성적변경" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="4" FontSize="15" Click="Score_Change_Click"/>
+        <Button x:Name="Score_Chart" Content="성적차트" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5" FontSize="15" Click="Score_Chart_Click"/>
+        <Button x:Name="CLEAR" Content=" CLEAR " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5" FontSize="15" Click="Clear_Click"/>
+        <Button x:Name="Down_Load" Content="다운로드" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" FontSize="15" Click="Down_Load_Click"/>
+        <Button x:Name="END" Content="작업종료" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="5" FontSize="15" Click="END_Click"/>
+
+        <TextBox x:Name="txtName" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Width="220" FontSize="15"/>
+        <TextBox x:Name="txtEnglishScore" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Width="60" FontSize="15"/>
+        <TextBox x:Name="txtMathScore" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Width="60" FontSize="15"/>
+
+    </Grid>
+</Window>
