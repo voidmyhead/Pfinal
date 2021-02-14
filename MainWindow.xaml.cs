@@ -27,9 +27,26 @@ namespace Pfinal
                 return; 
             }
             else//DB에 입력될 성적들을 메인윈도우의 레이블에 값들을 계산해서 넣는다.
-            {
-                Lb_SumScore.Content = (int.Parse(txtEnglishScore.Text) + int.Parse(txtMathScore.Text));
-                Lb_AverageScore.Content = (Double.Parse(txtEnglishScore.Text) + Double.Parse(txtMathScore.Text)) / 2;
+            {//입력하려는 성적값이 정수가 아니라면 에러가 발생하여 try~catch로 해결
+                try
+                {
+                    Lb_SumScore.Content = (int.Parse(txtEnglishScore.Text) + int.Parse(txtMathScore.Text));
+                    Lb_AverageScore.Content = (Double.Parse(txtEnglishScore.Text) + Double.Parse(txtMathScore.Text)) / 2;
+                    string Insert_query;
+                    Insert_query = "INSERT INTO tblStudent VALUES('" + txtName.Text + "'," + txtEnglishScore.Text + "," + txtMathScore.Text + "," + Lb_AverageScore.Content + "," + Lb_SumScore.Content + ")";
+
+                    SqlCommand comm = new SqlCommand(Insert_query, Conn);
+                    comm.ExecuteNonQuery();
+
+                    Conn.Close();
+
+                    MessageBox.Show("성공적으로 입력했습니다.");
+                }
+                catch (System.FormatException)
+                {
+                    MessageBox.Show("입력하는 성적에는 정수만 입력해주세요");
+                    Conn.Close();
+                }
             }
 
             string Insert_query;
