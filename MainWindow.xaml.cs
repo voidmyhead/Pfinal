@@ -306,6 +306,7 @@ namespace Pfinal
             try 
             {
                 workbook.SaveAs(Filename: @"D:\Student Score.xlsx");
+                workbook.Close();
             }
             catch (System.Runtime.InteropServices.COMException)//파일을 덮어쓴다고 할때, 이를 거부하면 직접 파일명과 경로를 설정할 수 있도록 함.
             {
